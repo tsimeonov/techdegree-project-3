@@ -6,25 +6,25 @@
 
 body {
 	font-family: 'Montserrat', sans-serif;
-
 }
 
-div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items:  center;
+fieldset {
+  display: flex;
+  flex-direction: column;
+	flex-wrap: wrap;
 }
 
 div h1 {
 	margin-top: 20px;
 	padding-bottom: 10px;
 	font-size: 3em;
+	text-align: center;
 	font-weight: bolder;
 }
 
 div p {
 	margin-bottom: 40px;
+	text-align: center;
 	color: rgba(146, 144, 146, 0.87);
 }
 
@@ -42,17 +42,27 @@ fieldset legend {
 	font-size:  1.4em;
 	font-weight: bold;
 	padding-right: 20px;
+	margin-bottom: 30px;
 }
 
-/*############# NAME ############*/
-
-label[for="name"] {
+label[for="name"],
+label[for="email"],
+label[for="phone"],
+label[for="address"],
+label[for="city"],
+label[for="country"],
+label[for="zip_code"] {
 	align-self: flex-start;
 	padding-top: 15px;
 	padding-bottom: 10px;
 }
 
-#name {
+#name,
+#email,
+#phone,
+#address,
+#city,
+#zip_code {
 	align-self: flex-start;
 	height: 50px;
 	width: 100%;
@@ -69,87 +79,6 @@ input::placeholder {
 	margin-bottom: 20px;
 }
 
-/*############# EMAIL ############*/
-
-label[for="email"] {
-	align-self: flex-start;
-	padding-top: 15px;
-	padding-bottom: 10px;
-}
-
-#email {
-	align-self: flex-start;
-	height: 50px;
-	width: 100%;
-	border: none;
-	background-color: rgba(240, 240, 240, 0.87);
-	border-radius: 10px;
-}
-
-/*############# PHONE NUMBER ############*/
-
-label[for="phone"] {
-	align-self: flex-start;
-	padding-top: 15px;
-	padding-bottom: 10px;
-}
-
-#phone {
-	align-self: flex-start;
-	height: 50px;
-	width: 100%;
-	border: none;
-	background-color: rgba(240, 240, 240, 0.87);
-	border-radius: 10px;
-}
-
-/*############# STREET ADDRESS ############*/
-
-label[for="address"] {
-	align-self: flex-start;
-	padding-top: 15px;
-	padding-bottom: 10px;
-}
-
-#address {
-	align-self: flex-start;
-	height: 50px;
-	width: 100%;
-	border: none;
-	background-color: rgba(240, 240, 240, 0.87);
-	border-radius: 10px;
-}
-
-/*############# CITY ############*/
-
-label[for="city"] {
-	align-self: flex-start;
-	padding-top: 15px;
-	padding-bottom: 10px;
-}
-
-#city {
-	align-self: flex-start;
-	height: 50px;
-	width: 100%;
-	border: none;
-	background-color: rgba(240, 240, 240, 0.87);
-	border-radius: 10px;
-}
-
-/*############# COUNTRY ############*/
-
-label[for="country"] {
-	align-self: flex-start;
-	padding-top: 15px;
-	padding-bottom: 10px;
-}
-
-select option[value="placeholder_text"] {
-	color: red;
-
-}
-
 #country {
 	align-self: flex-start;
 	height: 50px;
@@ -161,25 +90,11 @@ select option[value="placeholder_text"] {
 	margin-bottom: 10px;
 }
 
-/*############# ZIP CODE ############*/
+/*############# NEWSLETTER SECTION ############*/
 
-label[for="zip_code"] {
-	align-self: flex-start;
-	padding-top: 15px;
-	padding-bottom: 10px;
+fieldset {
+	margin-top: 30px;
 }
-
-#zip_code {
-	align-self: flex-start;
-	height: 50px;
-	width: 20%;
-	border: none;
-	background-color: rgba(240, 240, 240, 0.87);
-	border-radius: 10px;
-	margin-bottom: 40px;
-}
-
-/*############# NEWSLETTER ############*/
 
 fieldset > p {
 	width: 100%;
@@ -216,26 +131,24 @@ label[for="plain"] {
 .textarea {
 	margin-top: 20px;
 	margin-bottom: 40px;
-	position: relative;
-	width: 100%;
-	height: 200px;
-
+	margin-left: 0;
 }
 
-#topic {
-	position: absolute;
-	left:  0;
-	bottom: 0;
-	border: 1px solid rgba(131, 126, 126, 0.87);
-	resize: none;
-	padding-top: 10px;
+textarea {
+	width: 90vw;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	padding: 10px;
+	line-height: 1.5;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 1px #999;
 }
 
 .textarea p {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+	text-align: left;
+	margin-bottom: 10px;
+} 
 
 /*############# BUTTON ############*/
 
@@ -276,6 +189,39 @@ footer {
 	padding: 1em ;
 	font-style: italic;
 	font-size: .8em;
+}
+
+@media (min-width: 768px) {
+
+	fieldset {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  label[for="name"],
+  label[for="email"],
+  label[for="phone"],
+  label[for="address"],
+  label[for="city"],
+  label[for="country"],
+  label[for="zip_code"] {
+		flex-basis: 20%;
+		margin-top: 15px;
+		margin-bottom: 10px;
+  }
+  
+  #name,
+  #email,
+  #phone,
+  #address,
+  #city,
+  #country,
+  #zip_code {
+		flex-basis: 75%;
+		margin-top: 15px;
+		margin-bottom: 10px;
+		font-size: 1em;
+  }
 }
 
 
